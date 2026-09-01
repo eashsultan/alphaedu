@@ -68,3 +68,9 @@ docker-compose up -d
 - [ ] Core School Administration
 - [ ] Student & Teacher Portals
 - [ ] Payments Integration
+
+## Deployment Architecture (Planned)
+- **Frontend**: Firebase Hosting (`alphaedu.ng`)
+- **Backend**: Google Cloud Run (`api.alphaedu.ng`)
+- **Database**: PostgreSQL (Only accessible by the Backend)
+For more details, see [docs/architecture/deployment.md](docs/architecture/deployment.md).

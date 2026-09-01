@@ -33,3 +33,10 @@ Before implementing a requested feature:
 4. Make the smallest appropriate change.
 5. Run relevant checks/tests.
 6. Report what changed.
+
+### Deployment architecture
+* The frontend is hosted on Firebase Hosting (alphaedu.ng).
+* The backend is hosted on Google Cloud Run (api.alphaedu.ng).
+* The frontend must NEVER connect directly to PostgreSQL.
+* FastAPI owns all database access.
+* Keep the FastAPI backend independent so it can serve the future mobile app.
