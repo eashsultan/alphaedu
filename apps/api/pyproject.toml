@@ -1,0 +1,9 @@
+[project]
+name = "alphaedu-api"
+version = "0.1.0"
+description = "AlphaEdu Backend API"
+authors = [
+    {name = "AlphaEdu Team"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
