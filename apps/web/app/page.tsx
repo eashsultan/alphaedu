@@ -2,6 +2,7 @@ import Navbar from "@/components/landing/Navbar";
 import Hero from "@/components/landing/Hero";
 import Features from "@/components/landing/Features";
 import Experience from "@/components/landing/Experience";
+import ForSchools from "@/components/landing/ForSchools";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
         <Hero />
         <Features />
         <Experience />
+        <ForSchools />
       </main>
     </div>
   );
