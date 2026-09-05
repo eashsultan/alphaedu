@@ -1,3 +1,32 @@
+export type SchoolMock = {
+  id: string;
+  name: string;
+  code: string;
+  location: string;
+  plan: string;
+  status: string;
+  students: number;
+  dateJoined: string;
+  logo: string;
+};
+
+export type ExpiringSchoolMock = {
+  id: string;
+  name: string;
+  plan: string;
+  expiresIn: number;
+  logo: string;
+};
+
+export type ActivityMock = {
+  id: string;
+  action: string;
+  actor: string;
+  entity: string;
+  school: string;
+  time: string;
+};
+
 export const adminMockData = {
   kpis: {
     totalSchools: { value: 0, change: "0%", isPositive: true },
@@ -36,7 +65,7 @@ export const adminMockData = {
     { name: "Pro", value: 0, color: "#0099CC", price: "₦100,000" },
     { name: "Enterprise", value: 0, color: "#E85D04", price: "₦120,000" },
   ],
-  recentSchools: [],
-  expiringSchools: [],
-  recentActivity: []
+  recentSchools: [] as SchoolMock[],
+  expiringSchools: [] as ExpiringSchoolMock[],
+  recentActivity: [] as ActivityMock[]
 };
