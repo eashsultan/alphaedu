@@ -43,7 +43,7 @@ export default function Hero() {
             className="w-full lg:w-5/12 flex flex-col items-start text-left z-20"
           >
             <motion.div variants={itemVars}>
-              <p className="inline-flex items-center gap-2 rounded-full bg-white/5 border border-white/10 px-4 py-1.5 text-[10px] font-bold tracking-widest text-blue-300 uppercase mb-8 backdrop-blur-md shadow-[0_0_20px_rgba(0,153,204,0.15)] overflow-hidden relative group cursor-default">
+              <div className="inline-flex items-center gap-2 rounded-full bg-white/5 border border-white/10 px-4 py-1.5 text-[10px] font-bold tracking-widest text-blue-300 uppercase mb-8 backdrop-blur-md shadow-[0_0_20px_rgba(0,153,204,0.15)] overflow-hidden relative group cursor-default">
                 <Sparkles className="h-3 w-3 text-[var(--color-brand-orange)]" />
                 THE FUTURE OF SCHOOL MANAGEMENT
                 <motion.div 
@@ -51,7 +51,7 @@ export default function Hero() {
                   transition={{ duration: 2.5, repeat: Infinity, ease: "linear", repeatDelay: 3 }}
                   className="absolute inset-0 w-1/2 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12"
                 />
-              </p>
+              </div>
             </motion.div>
             
             <motion.h1 variants={itemVars} className="text-5xl sm:text-6xl lg:text-[4.5rem] font-extrabold tracking-tight leading-[1.05] mb-6">
