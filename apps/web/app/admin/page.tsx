@@ -65,7 +65,7 @@ export default function AdminOverview() {
       <motion.div 
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
-        className="bg-white rounded-[2rem] border border-slate-200 shadow-sm p-2 flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-slate-100 overflow-hidden"
+        className="bg-white/90 backdrop-blur-md rounded-[2rem] border border-blue-900/10 shadow-sm p-2 flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-slate-100 overflow-hidden"
       >
         <div className="flex-1 p-6 flex items-center gap-5 hover:bg-slate-50/50 transition-colors rounded-t-[1.5rem] md:rounded-tr-none md:rounded-l-[1.5rem]">
           <div className="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
@@ -104,7 +104,7 @@ export default function AdminOverview() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.1 }}
-            className="bg-white rounded-[1.5rem] p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow group relative overflow-hidden"
+            className="bg-white/80 backdrop-blur-md rounded-[1.5rem] p-6 border border-blue-900/5 shadow-md shadow-blue-900/5 hover:shadow-md transition-shadow group relative overflow-hidden"
           >
             <div className={`absolute top-0 right-0 w-24 h-24 rounded-bl-[3rem] opacity-10 transition-transform group-hover:scale-125 ${getColorClass(kpi.color).split(' ')[0]}`}></div>
             
@@ -134,7 +134,7 @@ export default function AdminOverview() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="bg-white rounded-[2rem] border border-slate-200 shadow-sm p-6 lg:p-8 flex flex-col"
+          className="bg-white/90 backdrop-blur-md rounded-[2rem] border border-blue-900/10 shadow-sm p-6 lg:p-8 flex flex-col"
         >
           <div className="flex justify-between items-start mb-8">
             <div>
@@ -174,7 +174,7 @@ export default function AdminOverview() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="bg-white rounded-[2rem] border border-slate-200 shadow-sm p-6 lg:p-8 flex flex-col"
+          className="bg-white/90 backdrop-blur-md rounded-[2rem] border border-blue-900/10 shadow-sm p-6 lg:p-8 flex flex-col"
         >
           <div className="flex justify-between items-start mb-8">
             <div>
@@ -214,7 +214,7 @@ export default function AdminOverview() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="bg-white rounded-[2rem] border border-slate-200 shadow-sm p-6 lg:p-8 flex flex-col"
+          className="bg-white/90 backdrop-blur-md rounded-[2rem] border border-blue-900/10 shadow-sm p-6 lg:p-8 flex flex-col"
         >
           <div className="mb-8">
             <p className="text-sm font-bold text-slate-500 uppercase tracking-widest mb-2 flex items-center gap-2">Plan Distribution</p>
@@ -254,7 +254,7 @@ export default function AdminOverview() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="bg-white rounded-[2rem] border border-slate-200 shadow-sm overflow-hidden lg:col-span-2 flex flex-col"
+          className="bg-white/90 backdrop-blur-md rounded-[2rem] border border-blue-900/10 shadow-sm overflow-hidden lg:col-span-2 flex flex-col"
         >
           <div className="p-6 lg:p-8 border-b border-slate-100 flex justify-between items-center bg-amber-50/30">
             <div>
@@ -298,7 +298,7 @@ export default function AdminOverview() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
-          className="bg-white rounded-[2rem] border border-slate-200 shadow-sm overflow-hidden xl:col-span-2"
+          className="bg-white/90 backdrop-blur-md rounded-[2rem] border border-blue-900/10 shadow-sm overflow-hidden xl:col-span-2"
         >
           <div className="p-6 border-b border-slate-100 flex justify-between items-center">
             <h3 className="text-xl font-black text-slate-900">Recent Schools</h3>
@@ -308,7 +308,7 @@ export default function AdminOverview() {
           </div>
           <div className="overflow-x-auto">
             <table className="w-full text-left text-sm whitespace-nowrap">
-              <thead className="bg-slate-50 text-slate-500 font-bold uppercase tracking-wider text-xs border-b border-slate-200">
+              <thead className="bg-[var(--color-brand-blue)]/5 text-blue-900 font-black uppercase tracking-wider text-xs border-b border-blue-900/10">
                 <tr>
                   <th className="px-6 py-4">School</th>
                   <th className="px-6 py-4">School Code</th>
@@ -362,7 +362,7 @@ export default function AdminOverview() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7 }}
-          className="bg-white rounded-[2rem] border border-slate-200 shadow-sm flex flex-col overflow-hidden"
+          className="bg-white/90 backdrop-blur-md rounded-[2rem] border border-blue-900/10 shadow-sm flex flex-col overflow-hidden"
         >
           <div className="p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
             <h3 className="text-xl font-black text-slate-900">Recent Activity</h3>
