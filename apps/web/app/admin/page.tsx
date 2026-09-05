@@ -223,7 +223,7 @@ export default function AdminOverview() {
           <div className="flex-1 flex flex-col justify-center space-y-6">
             {subscriptionDistribution.map((plan) => {
               const total = subscriptionDistribution.reduce((acc, curr) => acc + curr.value, 0);
-              const percent = Math.round((plan.value / total) * 100);
+              const percent = total === 0 ? 0 : Math.round((plan.value / total) * 100);
               return (
                 <div key={plan.name}>
                   <div className="flex justify-between items-end mb-2">
