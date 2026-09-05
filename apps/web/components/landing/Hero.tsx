@@ -58,7 +58,7 @@ export default function Hero() {
             >
               <div className="absolute inset-0 bg-gradient-to-t from-[#020817]/80 via-transparent to-transparent z-10"></div>
               <img 
-                src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=2070&auto=format&fit=crop" 
+                src="/hero-students.jpg" 
                 alt="Students learning in a modern classroom" 
                 className="w-full h-full object-cover"
               />

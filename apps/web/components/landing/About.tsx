@@ -42,7 +42,7 @@ export default function About() {
               className="relative rounded-3xl overflow-hidden shadow-2xl border border-gray-100 h-[400px] sm:h-[500px]"
             >
               <img 
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop" 
+                src="/about-students.jpg" 
                 alt="Students collaborating" 
                 className="w-full h-full object-cover"
               />
