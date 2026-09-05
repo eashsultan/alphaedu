@@ -11,9 +11,10 @@ export default function WhoItsFor() {
       tagline: "Run your school with clarity.",
       description: "Manage students, teachers, academics, attendance, administration, and more from one connected platform.",
       icon: Building2,
+      image: "/hero-students.jpg",
+      imageOverlay: "bg-blue-600/10",
       accent: "blue",
       glow: "bg-blue-400/20",
-      iconBg: "bg-blue-50 border-blue-100",
       iconColor: "text-blue-600",
       hoverText: "group-hover:text-blue-600",
     },
@@ -23,9 +24,10 @@ export default function WhoItsFor() {
       tagline: "Spend more time teaching.",
       description: "Manage classes, attendance, assessments, results, and student progress with less administrative work.",
       icon: BookOpen,
+      image: "/about-students.jpg",
+      imageOverlay: "bg-orange-600/10",
       accent: "orange",
       glow: "bg-orange-400/20",
-      iconBg: "bg-orange-50 border-orange-100",
       iconColor: "text-[var(--color-brand-orange)]",
       hoverText: "group-hover:text-[var(--color-brand-orange)]",
     },
@@ -35,9 +37,10 @@ export default function WhoItsFor() {
       tagline: "Stay connected.",
       description: "Keep up with attendance, academic performance, announcements, and important school updates.",
       icon: Users,
+      image: "/aud-parents.jpg",
+      imageOverlay: "bg-green-600/10",
       accent: "green",
       glow: "bg-green-400/20",
-      iconBg: "bg-green-50 border-green-100",
       iconColor: "text-green-600",
       hoverText: "group-hover:text-green-600",
     },
@@ -47,9 +50,10 @@ export default function WhoItsFor() {
       tagline: "Stay on top of your learning.",
       description: "Access academic information, results, schedules, and important updates in one place.",
       icon: GraduationCap,
+      image: "/aud-students.jpg",
+      imageOverlay: "bg-purple-600/10",
       accent: "purple",
       glow: "bg-purple-400/20",
-      iconBg: "bg-purple-50 border-purple-100",
       iconColor: "text-purple-600",
       hoverText: "group-hover:text-purple-600",
     }
@@ -75,7 +79,7 @@ export default function WhoItsFor() {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
           {audiences.map((aud, index) => (
             <motion.div 
               key={aud.id}
@@ -83,25 +87,36 @@ export default function WhoItsFor() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 * index, type: "spring", stiffness: 100 }}
-              className="relative group bg-white rounded-[2rem] p-10 sm:p-12 border border-gray-100 shadow-xl shadow-gray-200/30 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden"
+              className="relative group bg-white rounded-[2rem] p-4 sm:p-6 border border-gray-100 shadow-xl shadow-gray-200/30 hover:shadow-2xl hover:border-gray-200 hover:-translate-y-2 transition-all duration-500 overflow-hidden flex flex-col"
             >
-              {/* Dynamic Animated Glow in the Corner */}
-              <div className={`absolute -top-32 -right-32 w-64 h-64 rounded-full blur-[80px] group-hover:scale-150 transition-transform duration-700 pointer-events-none opacity-50 ${aud.glow}`}></div>
+              {/* Dynamic Animated Glow behind content */}
+              <div className={`absolute bottom-0 right-0 w-64 h-64 rounded-full blur-[80px] group-hover:scale-150 transition-transform duration-700 pointer-events-none opacity-0 group-hover:opacity-40 ${aud.glow}`}></div>
               
-              {/* Sleek Icon Container */}
-              <div className={`w-16 h-16 rounded-2xl flex items-center justify-center border shadow-sm mb-10 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 ${aud.iconBg} ${aud.iconColor}`}>
-                <aud.icon className="w-8 h-8" />
+              {/* Premium Image Container */}
+              <div className="relative h-48 sm:h-56 w-full rounded-[1.5rem] overflow-hidden mb-6 shadow-sm border border-black/5 bg-gray-50">
+                 <div className={`absolute inset-0 ${aud.imageOverlay} mix-blend-multiply z-10 group-hover:opacity-0 transition-opacity duration-500`}></div>
+                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent z-10 opacity-60"></div>
+                 <img 
+                   src={aud.image} 
+                   alt={aud.title} 
+                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" 
+                 />
+                 
+                 {/* Floating Glass Icon */}
+                 <div className={`absolute bottom-4 left-4 z-20 w-12 h-12 rounded-xl flex items-center justify-center border border-white/20 shadow-lg bg-white/90 backdrop-blur-md ${aud.iconColor} group-hover:scale-110 transition-transform duration-500`}>
+                    <aud.icon className="w-6 h-6" />
+                 </div>
               </div>
               
               {/* Content */}
-              <div className="relative z-10">
-                <h3 className="text-3xl font-black text-gray-900 mb-2 tracking-tight">{aud.title}</h3>
-                <h4 className={`text-lg font-bold mb-5 tracking-tight ${aud.iconColor}`}>{aud.tagline}</h4>
-                <p className="text-gray-500 leading-relaxed mb-10 text-lg">
+              <div className="relative z-10 px-2 sm:px-4 flex-1 flex flex-col">
+                <h3 className="text-2xl sm:text-3xl font-black text-gray-900 mb-2 tracking-tight group-hover:translate-x-1 transition-transform">{aud.title}</h3>
+                <h4 className={`text-base sm:text-lg font-bold mb-4 tracking-tight ${aud.iconColor}`}>{aud.tagline}</h4>
+                <p className="text-gray-500 leading-relaxed mb-8 text-base">
                   {aud.description}
                 </p>
                 
-                <div className="mt-auto">
+                <div className="mt-auto pb-2">
                   <a href="#" className={`inline-flex items-center gap-2 text-sm font-black text-gray-900 uppercase tracking-widest ${aud.hoverText} transition-colors`}>
                     For {aud.title} 
                     <ArrowRight className="h-4 w-4 opacity-40 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300" />
