@@ -3,6 +3,7 @@ import Hero from "@/components/landing/Hero";
 import Features from "@/components/landing/Features";
 import Experience from "@/components/landing/Experience";
 import ForSchools from "@/components/landing/ForSchools";
+import ForTeachers from "@/components/landing/ForTeachers";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         <Features />
         <Experience />
         <ForSchools />
+        <ForTeachers />
       </main>
     </div>
   );
