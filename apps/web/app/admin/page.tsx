@@ -1,3 +1,4 @@
+import Link from "next/link";
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
@@ -48,15 +49,15 @@ export default function AdminOverview() {
         </div>
         
         <div className="flex flex-wrap items-center gap-3">
-          <button className="px-4 py-2.5 bg-white border border-slate-200 text-slate-700 rounded-xl font-bold text-sm hover:bg-slate-50 shadow-sm transition-colors flex items-center gap-2">
+          <Link href="/admin/subscriptions" className="px-4 py-2.5 bg-white border border-slate-200 text-slate-700 rounded-xl font-bold text-sm hover:bg-slate-50 shadow-sm transition-colors flex items-center gap-2">
             View Expiring
-          </button>
-          <button className="px-4 py-2.5 bg-white border border-slate-200 text-slate-700 rounded-xl font-bold text-sm hover:bg-slate-50 shadow-sm transition-colors flex items-center gap-2">
+          </Link>
+          <Link href="/admin/users" className="px-4 py-2.5 bg-white border border-slate-200 text-slate-700 rounded-xl font-bold text-sm hover:bg-slate-50 shadow-sm transition-colors flex items-center gap-2">
             Manage Users
-          </button>
-          <button className="px-5 py-2.5 bg-[var(--color-brand-blue)] text-white rounded-xl font-bold text-sm shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5 transition-all flex items-center gap-2">
+          </Link>
+          <Link href="/admin/schools" className="px-5 py-2.5 bg-[var(--color-brand-blue)] text-white rounded-xl font-bold text-sm shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5 transition-all flex items-center gap-2">
             <Plus className="w-4 h-4" /> Create School
-          </button>
+          </Link>
         </div>
       </div>
 
