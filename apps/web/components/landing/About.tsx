@@ -32,18 +32,18 @@ export default function About() {
     <section className="bg-white py-24 sm:py-32 border-t border-gray-100 overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
-        {/* TOP: Uncropped Massive Image */}
+        {/* TOP: Uncropped Image, Constrained Size */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="w-full rounded-3xl overflow-hidden shadow-2xl border border-gray-100 mb-20"
+          className="w-full max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl border border-gray-100 mb-20"
         >
           <img 
             src="/about-students.jpg" 
             alt="Students collaborating" 
-            className="w-full h-auto object-cover"
+            className="w-full h-auto block"
           />
         </motion.div>
 

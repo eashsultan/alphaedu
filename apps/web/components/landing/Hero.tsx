@@ -2,11 +2,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative bg-[#020817] text-white pt-32 pb-24 md:pt-40 overflow-hidden border-b border-gray-900">
+    <section className="relative bg-[#020817] text-white pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden border-b border-gray-900">
       {/* Background Gradients */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[50%] rounded-full bg-[var(--color-brand-blue)]/20 blur-[150px]"></div>
@@ -15,7 +14,7 @@ export default function Hero() {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         {/* TOP: Centered Text Content */}
-        <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-16 sm:mb-20">
+        <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-12 sm:mb-16">
           <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
             <p className="inline-flex items-center rounded-full bg-white/5 border border-white/10 px-3 py-1 text-xs font-bold tracking-widest text-blue-300 uppercase mb-6 backdrop-blur-sm">
               THE FUTURE OF SCHOOL MANAGEMENT
@@ -44,20 +43,19 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* BOTTOM: Massive Uncropped Image */}
-        <div className="relative w-full flex items-center justify-center -mb-32 sm:-mb-40 md:-mb-48">
+        {/* BOTTOM: Appropriately Scaled Uncropped Image */}
+        <div className="relative w-full max-w-5xl mx-auto flex items-center justify-center">
           <motion.div 
             initial={{ opacity: 0, y: 40 }} 
             animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-            className="w-full rounded-t-3xl overflow-hidden shadow-2xl shadow-black/80 border border-white/10 border-b-0 z-10"
+            className="w-full rounded-2xl overflow-hidden shadow-2xl shadow-black/80 border border-white/10 z-10"
           >
-            <div className="absolute inset-0 bg-gradient-to-t from-[#020817] via-transparent to-transparent z-10 pointer-events-none"></div>
-            {/* Using h-auto to ensure the image scales proportionately without any cropping */}
+            {/* The image now scales naturally to the container's width, completely uncropped */}
             <img 
               src="/hero-students.jpg" 
               alt="Students learning in a modern classroom" 
-              className="w-full h-auto max-h-[80vh] object-cover object-top"
+              className="w-full h-auto block"
             />
           </motion.div>
         </div>
