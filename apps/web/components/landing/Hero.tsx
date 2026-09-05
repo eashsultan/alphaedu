@@ -1,109 +1,118 @@
 "use client";
-
 import React from "react";
-import Link from "next/link";
 import { motion } from "framer-motion";
-import HeroDashboardMockup from "./HeroDashboardMockup";
+import { ArrowRight, Play, TrendingUp, CheckCircle2, Bell } from "lucide-react";
+import Image from "next/image";
 
 export default function Hero() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { type: "spring" as const, stiffness: 300, damping: 24 },
-    },
-  };
-
   return (
-    <section className="relative overflow-hidden bg-white pb-16 pt-20 sm:pb-24 sm:pt-32 lg:pb-32">
-      {/* Background decoration */}
-      <motion.div 
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 0.3, scale: 1 }}
-        transition={{ duration: 1.5, ease: "easeOut" }}
-        className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" 
-        aria-hidden="true"
-      >
-        <div
-          className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[var(--color-brand-orange)] to-[var(--color-brand-blue)] sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-          style={{
-            clipPath:
-              "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
-          }}
-        />
-      </motion.div>
+    <section className="relative bg-[#020817] text-white pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden border-b border-gray-900">
+      {/* Background Gradients */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-[var(--color-brand-blue)]/20 blur-[120px]"></div>
+        <div className="absolute top-[20%] -right-[10%] w-[40%] h-[60%] rounded-full bg-[var(--color-brand-orange)]/15 blur-[120px]"></div>
+      </div>
 
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <motion.div 
-          className="text-center"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          <motion.div variants={itemVariants}>
-            <p className="inline-flex rounded-full bg-[var(--color-brand-blue)]/10 px-4 py-1.5 text-sm font-semibold tracking-wide text-[var(--color-brand-blue)] ring-1 ring-inset ring-[var(--color-brand-blue)]/20 shadow-sm">
-              THE FUTURE OF SCHOOL MANAGEMENT
-            </p>
-          </motion.div>
-          <motion.h1 variants={itemVariants} className="mt-8 text-5xl font-extrabold tracking-tight text-gray-900 sm:text-6xl lg:text-7xl">
-            Run your school <span className="relative whitespace-nowrap text-[var(--color-brand-orange)]">
-              <span className="relative z-10">smarter.</span>
-              <svg className="absolute -bottom-2 -left-2 -right-2 -z-10 hidden sm:block" viewBox="0 0 200 20" preserveAspectRatio="none">
-                 <motion.path 
-                   d="M 0 10 Q 100 20 200 10" 
-                   fill="none" 
-                   stroke="currentColor" 
-                   strokeWidth="8" 
-                   strokeLinecap="round"
-                   initial={{ pathLength: 0, opacity: 0 }}
-                   animate={{ pathLength: 1, opacity: 0.2 }}
-                   transition={{ duration: 1, delay: 0.8, ease: "easeInOut" }}
-                 />
-              </svg>
-            </span>
-          </motion.h1>
-          <motion.p variants={itemVariants} className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-600 sm:text-xl">
-            AlphaEdu brings students, teachers, parents, results, attendance, and school
-            administration together in one simple, powerful platform.
-          </motion.p>
-          <motion.div variants={itemVariants} className="mt-10 flex items-center justify-center gap-x-6">
-            <Link
-              href="#get-started"
-              className="group relative flex items-center justify-center gap-x-2 rounded-full bg-[var(--color-brand-orange)] px-8 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-orange-600 hover:shadow-orange-500/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600"
-            >
-              Get Started
-              <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-              </svg>
-            </Link>
-            <Link
-              href="#how-it-works"
-              className="group text-base font-semibold leading-6 text-gray-900 transition-colors hover:text-[var(--color-brand-blue)]"
-            >
-              See How It Works <span className="inline-block transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
-            </Link>
-          </motion.div>
-        </motion.div>
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          
+          {/* LEFT: Text Content */}
+          <div className="flex flex-col items-start text-left max-w-2xl">
+            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+              <p className="inline-flex items-center rounded-full bg-white/5 border border-white/10 px-3 py-1 text-xs font-bold tracking-widest text-blue-300 uppercase mb-6 backdrop-blur-sm">
+                THE FUTURE OF SCHOOL MANAGEMENT
+              </p>
+            </motion.div>
+            
+            <motion.h1 initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6">
+              One platform. <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-[var(--color-brand-orange)]">
+                Every part of your school.
+              </span>
+            </motion.h1>
 
-        <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ type: "spring", stiffness: 200, damping: 30, delay: 0.6 }}
-        >
-          <HeroDashboardMockup />
-        </motion.div>
+            <motion.p initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} className="text-lg sm:text-xl text-gray-400 leading-relaxed mb-10 max-w-lg">
+              AlphaEdu connects schools, teachers, parents, and students in one simple platform — making education management easier, smarter, and more connected.
+            </motion.p>
+
+            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }} className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+              <button className="px-8 py-4 rounded-xl bg-[var(--color-brand-orange)] text-white font-bold hover:bg-[#d65503] transition-all hover:-translate-y-0.5 active:scale-95 shadow-lg shadow-[var(--color-brand-orange)]/25">
+                Get Started
+              </button>
+              <button className="px-8 py-4 rounded-xl bg-white/5 text-white font-bold border border-white/10 hover:bg-white/10 transition-all hover:-translate-y-0.5 active:scale-95 backdrop-blur-sm flex items-center justify-center gap-2">
+                Explore AlphaEdu
+                <ArrowRight className="h-4 w-4" />
+              </button>
+            </motion.div>
+          </div>
+
+          {/* RIGHT: Photography + Product UI */}
+          <div className="relative w-full h-[500px] sm:h-[600px] lg:h-[700px] flex items-center justify-center">
+            
+            {/* Main Photography */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }} 
+              animate={{ opacity: 1, scale: 1 }} 
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="absolute inset-4 sm:inset-10 rounded-3xl overflow-hidden shadow-2xl shadow-black/50 border border-white/10 z-10"
+            >
+              <div className="absolute inset-0 bg-gradient-to-t from-[#020817]/80 via-transparent to-transparent z-10"></div>
+              <img 
+                src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=2070&auto=format&fit=crop" 
+                alt="Students learning in a modern classroom" 
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+
+            {/* Floating UI Card 1: Attendance */}
+            <motion.div 
+              initial={{ opacity: 0, x: -20, y: 20 }} animate={{ opacity: 1, x: 0, y: 0 }} transition={{ duration: 0.6, delay: 0.5, type: "spring" }}
+              className="absolute top-12 left-0 sm:left-4 z-20 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-white/20 flex items-center gap-4 text-gray-900 w-48 hover:-translate-y-1 transition-transform"
+            >
+              <div className="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 shrink-0">
+                <CheckCircle2 className="h-5 w-5" />
+              </div>
+              <div>
+                <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Attendance</p>
+                <p className="text-xl font-black text-gray-900">94.8%</p>
+              </div>
+            </motion.div>
+
+            {/* Floating UI Card 2: Students */}
+            <motion.div 
+              initial={{ opacity: 0, x: 20, y: 20 }} animate={{ opacity: 1, x: 0, y: 0 }} transition={{ duration: 0.6, delay: 0.7, type: "spring" }}
+              className="absolute bottom-32 right-0 sm:-right-4 z-20 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-white/20 flex items-center gap-4 text-gray-900 w-52 hover:-translate-y-1 transition-transform"
+            >
+              <div className="h-10 w-10 rounded-full bg-[var(--color-brand-blue)]/10 flex items-center justify-center text-[var(--color-brand-blue)] shrink-0">
+                <TrendingUp className="h-5 w-5" />
+              </div>
+              <div>
+                <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Total Students</p>
+                <p className="text-xl font-black text-gray-900">1,248</p>
+              </div>
+            </motion.div>
+
+            {/* Floating UI Card 3: Notification */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.9, type: "spring" }}
+              className="absolute -bottom-6 left-1/2 -translate-x-1/2 z-20 bg-white/95 backdrop-blur-md px-5 py-3 rounded-2xl shadow-xl border border-white/20 flex items-center gap-3 text-gray-900 hover:-translate-y-1 transition-transform whitespace-nowrap"
+            >
+              <div className="relative">
+                <Bell className="h-4 w-4 text-[var(--color-brand-orange)]" />
+                <span className="absolute -top-1 -right-1 flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--color-brand-orange)] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[var(--color-brand-orange)]"></span>
+                </span>
+              </div>
+              <div>
+                <p className="text-xs font-bold text-gray-900">Results Published</p>
+                <p className="text-[10px] text-gray-500">Grade 12 Mathematics</p>
+              </div>
+            </motion.div>
+
+          </div>
+
+        </div>
       </div>
     </section>
   );
