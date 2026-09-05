@@ -1,71 +1,56 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Zap } from "lucide-react";
 
 export default function Cta() {
   return (
-    <section className="relative bg-[#0099CC] py-32 overflow-hidden">
-      {/* 200% Upgraded Decorative Animated Gradients */}
-      <div className="absolute inset-0 pointer-events-none">
-        <motion.div 
-          animate={{ scale: [1, 1.2, 1], rotate: [0, 90, 0] }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-[var(--color-brand-orange)] blur-[120px] translate-x-1/3 -translate-y-1/3 opacity-40 mix-blend-screen"
-        ></motion.div>
-        <motion.div 
-          animate={{ scale: [1, 1.3, 1], rotate: [0, -90, 0] }}
-          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-          className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full bg-white blur-[150px] -translate-x-1/3 translate-y-1/3 opacity-30 mix-blend-overlay"
-        ></motion.div>
+    <section className="relative py-32 lg:py-48 overflow-hidden bg-white">
+      {/* 300% Upgraded CTA with massive colorful gradient meshing */}
+      <div className="absolute inset-0 z-0">
+         <div className="absolute inset-0 bg-[#0099CC]"></div>
+         <motion.div 
+           animate={{ scale: [1, 1.2, 1], rotate: [0, 90, 0] }}
+           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+           className="absolute top-[-50%] left-[-20%] w-[100vw] h-[100vw] rounded-full bg-gradient-to-r from-[#0099CC] to-blue-400 blur-[120px] mix-blend-screen opacity-80"
+         ></motion.div>
+         <motion.div 
+           animate={{ scale: [1, 1.5, 1], rotate: [0, -90, 0] }}
+           transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+           className="absolute bottom-[-50%] right-[-20%] w-[80vw] h-[80vw] rounded-full bg-gradient-to-r from-[var(--color-brand-orange)] to-orange-400 blur-[150px] mix-blend-screen opacity-60"
+         ></motion.div>
       </div>
       
-      <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center text-white z-10">
+      <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center text-white z-10">
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, scale: 0.9, y: 20 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
+          className="flex flex-col items-center"
         >
-          <div className="inline-flex items-center justify-center p-3 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 mb-8 shadow-2xl">
-            <div className="h-12 w-12 rounded-xl bg-white text-[#0099CC] flex items-center justify-center">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+          <div className="inline-flex items-center justify-center p-4 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 mb-10 shadow-2xl shadow-black/10">
+            <div className="h-16 w-16 rounded-2xl bg-white text-[var(--color-brand-blue)] flex items-center justify-center shadow-inner">
+              <Zap className="w-8 h-8 fill-current" />
             </div>
           </div>
-        </motion.div>
 
-        <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl mb-6 drop-shadow-sm"
-        >
-          Ready to run your school smarter?
-        </motion.h2>
-        
-        <motion.p 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-          className="text-xl text-blue-50 mb-10 max-w-2xl mx-auto font-medium"
-        >
-          Bring your school community together with AlphaEdu.
-        </motion.p>
-        
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
-        >
-          <button className="w-full sm:w-auto px-8 py-4 rounded-xl bg-white text-[#0099CC] font-extrabold shadow-xl hover:bg-gray-50 hover:-translate-y-1 hover:shadow-2xl hover:shadow-white/20 transition-all active:scale-95 text-lg group flex items-center justify-center gap-2">
-            Get Started <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-          </button>
-          <button className="w-full sm:w-auto px-8 py-4 rounded-xl bg-white/10 text-white font-bold border border-white/20 hover:bg-white/20 hover:border-white/30 hover:-translate-y-1 transition-all active:scale-95 backdrop-blur-md text-lg shadow-lg">
-            Contact Us
-          </button>
+          <h2 className="text-5xl font-black tracking-tighter sm:text-6xl lg:text-7xl mb-8 drop-shadow-md leading-[1.05]">
+            Ready to run your <br className="hidden sm:block" /> school smarter?
+          </h2>
+          
+          <p className="text-xl sm:text-2xl text-blue-50 mb-12 max-w-2xl mx-auto font-medium leading-relaxed drop-shadow-sm">
+            Bring your entire school community together with the modern platform designed for African education.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-5 w-full sm:w-auto">
+            <button className="w-full sm:w-auto px-10 py-5 rounded-2xl bg-white text-[var(--color-brand-blue)] font-black shadow-2xl shadow-black/20 hover:bg-gray-50 hover:scale-105 hover:shadow-3xl transition-all duration-300 active:scale-95 text-lg group flex items-center justify-center gap-3">
+              Get Started Now <ArrowRight className="h-6 w-6 group-hover:translate-x-1.5 transition-transform" />
+            </button>
+            <button className="w-full sm:w-auto px-10 py-5 rounded-2xl bg-black/10 text-white font-bold border border-white/20 hover:bg-white/20 hover:border-white/40 hover:scale-105 transition-all duration-300 active:scale-95 backdrop-blur-md text-lg shadow-xl">
+              Talk to Sales
+            </button>
+          </div>
         </motion.div>
       </div>
     </section>
