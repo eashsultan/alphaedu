@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { motion } from "framer-motion";
 import { 
-  Building2, Users, GraduationCap, ArrowUpRight, ArrowRight, 
+  Building2, School as SchoolIcon, Users, GraduationCap, ArrowUpRight, ArrowRight, 
   MoreHorizontal, Plus, Wallet, AlertTriangle, ShieldAlert, 
   CheckCircle2, Bell, Clock, LineChart
 } from "lucide-react";
